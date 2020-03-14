@@ -42,12 +42,14 @@ Nous aimerions aussi si possible afficher des graphiques statistiques ou des car
 Commencement-récupération des données pertinentes
 
 # Description des fichiers du dépôt:
+	script_get_data.py : fichier python permettant de récupérer les données utiles et de les mettre sous forme de 
+dataframe pour une manipulation simplifiée.
 
 # Etat de la récupération des données, du nettoyage et de leur mise en forme:
-En cours
+Principales données récupérées, non nettoyées, d'autres mises en forme potentielles à prévoir
 
 # Etat de la base de données réalisée:
 Null
 
 # Programmes réalisés et les fonctionnalités opérationnelles:
-Null
+	script de récupération des données
