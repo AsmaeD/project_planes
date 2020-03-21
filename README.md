@@ -2,7 +2,7 @@
  
 # Description 
 
-This is the git repository for the relational database course of our master's degree. You will find all info relative to the subject as well as the contributors to the project.
+This is the git repository for the project of relational database course of our master's degree. You will find all info relative to the subject as well as the contributors to the project.
 
 # Contributors
 
