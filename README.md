@@ -34,22 +34,3 @@ Main project contributors : RENAUDIN Philippine and DADI Asmae
 # Subject
 
 Dashboard for aviation, train and/or boat traffic. The aim will be to create a certain number of macro and micro indicators.
-
-Nous allons essayer de réaliser une application permettant aux internautes de naviguer parmis des informations statistiques sur l'aviation (accidents, fréquentation des aéropoprts, etc..) mais aussi tout simplement des informations relatives aux aéroports, gares ferroviares ou gares maritimes.
-Nous aimerions aussi si possible afficher des graphiques statistiques ou des cartes de trnasport (chemin le plus court, etc...)
-
-# Etat de réalisation du projet:
-Commencement-récupération des données pertinentes
-
-# Description des fichiers du dépôt:
-	script_get_data.py : fichier python permettant de récupérer les données utiles et de les mettre sous forme de 
-dataframe pour une manipulation simplifiée.
-
-# Etat de la récupération des données, du nettoyage et de leur mise en forme:
-Principales données récupérées, non nettoyées, d'autres mises en forme potentielles à prévoir
-
-# Etat de la base de données réalisée:
-Null
-
-# Programmes réalisés et les fonctionnalités opérationnelles:
-	script de récupération des données
