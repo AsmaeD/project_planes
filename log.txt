@@ -1,3 +1,5 @@
 06/03/2020 :création du projet
 
-14/03/2020: écriture d'un script de récupération des données (script_gat_data.py)
+14/03/2020: (Phi) écriture d'un script de récupération des données (script_gat_data.py)
+
+04/04/2020 : (Phi) écriture d'un script de nettoyage des données (celles déjà récupérées)
