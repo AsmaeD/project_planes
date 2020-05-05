@@ -37,7 +37,7 @@ headings_table = data_scrapper_headings(driver, url_head)
 
 
 #beginning of page by page data recovering
-for i in list(range(1919,1930,1)) : #i represents year
+for i in list(range(1919,2021,1)) : #i represents year
 		
 	for j in range(1,100,1): # j represents page index
 		
@@ -102,16 +102,17 @@ for i in range(len(df['date'])):
 for i in range(len(df2['incident_country'])):
 	#find all instances of parenthesis
 	country_parenthesis = re.findall(r"\( .*\)", df2['incident_country'][i])
-	
-	#isolate if exists the country in the parenthesis
-	country_only = re.findall(r"[A-Za-z ]*",country_parenthesis[0].replace(u'\xa0', u'') )
-	
-	#delete all empty instances
-	while("" in country_only) :
-		country_only.remove("")
+	try:
+		#isolate if exists the country in the parenthesis
+		country_only = re.findall(r"[A-Za-z ]*",country_parenthesis[0].replace(u'\xa0', u'') )
+	except IndexError:pass
+	else:
+		#delete all empty instances
+		while("" in country_only) :
+			country_only.remove("")
 		
-	#add country of incident
-	df2['incident_country'][i] = country_only[0]
+		#add country of incident
+		df2['incident_country'][i] = country_only[0]
 	
 #create complete data frame with 2 dataframes
 df = df.join(df2, how='outer')
