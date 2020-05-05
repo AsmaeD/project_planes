@@ -41,8 +41,8 @@ Nous allons essayer de réaliser une application permettant aux internautes de n
 Nous aimerions aussi si possible afficher des graphiques statistiques ou des cartes de transport (chemin le plus court, etc...)
 
 # Etat de réalisation du projet:
-Récupération des données pertinentes quasi achevé
-Création du répertoire de projet avec Django (construction des classes réalisée)
+Récupération des données pertinentes achevée
+Création du répertoire de projet avec Django (construction et migration des classes )
 
 # Description des fichiers du dépôt:
 	script_get_data.py : fichier python permettant de récupérer les données utiles et de les mettre sous forme de 
@@ -50,10 +50,10 @@ dataframe pour une manipulation simplifiée.
 	script_cleaning_data.py : fichier python permettant de nettoyer les données récupérées (suppression ou remplissage des valeurs manquantes)
 
 # Etat de la récupération des données, du nettoyage et de leur mise en forme:
-Principales données récupérées, nettoyées, d'autres mises en forme potentielles à prévoir (reliées les données provenant de différents sites entre elles)
+Toutes les données récupérables (soucis matériel et de temps) récupérées, nettoyées, d'autres mises en forme potentielles à prévoir (reliées les données provenant de différents sites entre elles)
 
 # Etat de la base de données réalisée:
-Créée, tables créées mais non migrées, base non remplie
+Créée, tables créées, migrées, base non remplie
 
 # Programmes réalisés et les fonctionnalités opérationnelles:
 	script de récupération des données

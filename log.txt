@@ -5,3 +5,6 @@
 04/04/2020 : (Phi) écriture d'un script de nettoyage des données (celles déjà récupérées)
 
 30/04/2020 : (Phi) création des classes dans le projet django 'projet_bddr'. Migration non appliquée car en attente des données complètes.
+
+05/05/2020 : (Phi) modification du modèle relationnel dans django suite à la récupération des données sur les accidents d'avions par Asmae.
+Migration des classes faite et appliquée. Début de rédaction du script de remplissage des tables.
