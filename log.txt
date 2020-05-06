@@ -8,3 +8,5 @@
 
 05/05/2020 : (Phi) modification du modèle relationnel dans django suite à la récupération des données sur les accidents d'avions par Asmae.
 Migration des classes faite et appliquée. Début de rédaction du script de remplissage des tables.
+
+06/05/2020 : (Phi) écriture du script de remplissage de la base. Pas encore testé car toutes les données ne sont pas encore nettoyées
