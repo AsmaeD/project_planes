@@ -7,6 +7,7 @@ Created on Sat Apr  4 09:27:12 2020
 
 import script_get_data as data
 import pandas as pd
+import numpy as np
 
 #Nettoyage aéroport
 
@@ -27,6 +28,7 @@ def cleaning_airports(liste_indice,liste_ville):
     
 airports=cleaning_airports(liste_indice,liste_ville)
 airports.drop(5860,inplace=True)
+airports.loc[7698]=["Unknown","Unknown","Unknown","",np.nan,np.nan]
 
 #Nettoyage routes
 
@@ -60,11 +62,17 @@ airports.drop(5860,inplace=True)
 #Nettoyage incidents
 incidents_data=pd.read_csv("incidents_data_asmae.txt")
 incidents=incidents_data.iloc[:,[1,2,4,5,6,9,10,11,12,]]
+incidents['airp_dep_ICAO']=""
+incidents['airp_arr_ICAO']=""
+
+
+
 
 """A faire : créer 2 listes avec tous les codes IACO des aéroports de départ et d'arriver puis en faire un dataframe
 à concaténer avec le dataframe 'incidents' """
 
 #Création de fichiers csv
 airports.to_csv('airports_data.csv', encoding='UTF-8')
+incidents.to_csv('incidents_data.csv', encoding='UTF-8')
 #routes.to_csv('routes_data.csv', encoding='UTF-8')
 
