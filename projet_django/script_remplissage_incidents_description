@@ -1,0 +1,37 @@
+#!/usr/bin/env python3
+
+#importation des exceptions django, des packages python et des classes de l'application
+
+from django.core.exceptions import ObjectDoesNotExist
+from application1.models import Incidents, Incidents_description
+import pandas as pd
+
+
+#Création des dataframes
+incidents = pd.read_csv("/users/mmath/renaudin/projet_bddr/incidents_data.csv", encoding='UTF-8')
+airports = pd.read_csv("/users/mmath/renaudin/projet_bddr/airports_data.csv", encoding='UTF-8')
+
+
+#Remplissage de la table "Incidents_description"
+
+(p,q) = incidents.shape
+
+for k in range(p):
+    
+    id_inc = Incidents.objects.get(id=k+1)
+    acc_type = incidents['cat'][k]
+    fat = incidents['fat.'][k]
+    company = incidents['operator'][k]
+    
+    try :
+        fat=int(float(fat))
+    except ValueError as e:
+        fat=-10**6
+    
+    try :
+        
+        incident_desc = Incidents_description.objects.get(id=k+1)
+    
+    except ObjectDoesNotExist as err :
+            incident_desc = Incidents_description(id=k+1,id_incidents=id_inc,inc_type=acc_type,fatalities=fat,airline=company)
+            incident_desc.save()
