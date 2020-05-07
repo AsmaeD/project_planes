@@ -20,6 +20,9 @@ liste_ville=["Minsk Mazowiecki","Powidz","nan","nan","Asahikawa","Utsunomiya","C
              "Kempsey","Kingaroy","Mareeba","Ngukurr","Narromine","Port Pirie","Smithton","Snake Bay","Stawell","Tibooburra",
              "Tumut","Wangaratta","Warracknabeal","Warren","Young","Baruun Urt","Hard Bargain","Xingcheng"]
 
+incidents_data=pd.read_excel('C:/Users/Philippine/Documents/GitHub/project_planes/données/incidents_data.xlsx', encoding='UTF-8')
+
+
 def cleaning_airports(liste_indice,liste_ville):
     airports=data.airport_data.iloc[:,[1,2,3,5,6,7]]
     for i in range(len(liste_indice)):
@@ -28,7 +31,11 @@ def cleaning_airports(liste_indice,liste_ville):
     
 airports=cleaning_airports(liste_indice,liste_ville)
 airports.drop(5860,inplace=True)
-airports.loc[7698]=["Unknown","Unknown","Unknown","",np.nan,np.nan]
+airports.loc[7698]=["Unknown","Unknown","Unknown","N/A","NONE","NONE"]
+
+#Neetoyage incidents
+incidents_data['airp_dep_ICAO'].fillna("N/A", inplace=True)
+incidents_data['airp_arr_ICAO'].fillna("N/A", inplace=True)
 
 #Nettoyage routes
 
@@ -59,8 +66,9 @@ airports.loc[7698]=["Unknown","Unknown","Unknown","",np.nan,np.nan]
 #
 #routes=data.routes_data.iloc[:,[1,3,5,7]].drop(liste_ligne_supp,0)
 
-incidents=pd.read_excel('C:/Users/Philippine/Documents/GitHub/project_planes/données/incidents_data.xlsx', encoding='UTF-8')
 
 #Création de fichiers csv
 airports.to_csv('airports_data.csv', encoding='UTF-8')
-incidents.to_csv('incidents_data.csv', encoding='UTF-8')
+#incidents.to_csv('incidents_data.csv', encoding='UTF-8')
+
+#test=pd.read_csv('incidents_data.csv',encoding='UTF-8')
