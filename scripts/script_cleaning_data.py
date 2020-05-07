@@ -31,11 +31,11 @@ def cleaning_airports(liste_indice,liste_ville):
     
 airports=cleaning_airports(liste_indice,liste_ville)
 airports.drop(5860,inplace=True)
-airports.loc[7698]=["Unknown","Unknown","Unknown","N/A","NONE","NONE"]
+airports.loc[7698]=["Unknown","Unknown","Unknown","0000","NONE","NONE"]
 
-#Neetoyage incidents
-incidents_data['airp_dep_ICAO'].fillna("N/A", inplace=True)
-incidents_data['airp_arr_ICAO'].fillna("N/A", inplace=True)
+#Nettoyage incidents
+incidents_data['airp_dep_ICAO'].fillna("0000", inplace=True)
+incidents_data['airp_arr_ICAO'].fillna("0000", inplace=True)
 
 #Nettoyage routes
 
@@ -66,9 +66,27 @@ incidents_data['airp_arr_ICAO'].fillna("N/A", inplace=True)
 #
 #routes=data.routes_data.iloc[:,[1,3,5,7]].drop(liste_ligne_supp,0)
 
+liste_ind_dep=[]
+(n,m)=incidents_data.shape
+for i in range(n):
+    if incidents_data['airp_dep_ICAO'][i] not in list(airports['ICAO']):
+        liste_ind_dep.append(i)
+        
+incidents_data.drop(liste_ind_dep, inplace=True)
+incidents_data.reset_index(inplace=True)
+
+liste_ind_arr=[]
+(p,q)=incidents_data.shape
+
+for i in range(p):
+    if incidents_data['airp_arr_ICAO'][i] not in list(airports['ICAO']):
+        liste_ind_arr.append(i)
+
+incidents_data.drop(liste_ind_arr, inplace=True)
+incidents_data.reset_index(inplace=True)
 
 #Création de fichiers csv
 airports.to_csv('airports_data.csv', encoding='UTF-8')
-#incidents.to_csv('incidents_data.csv', encoding='UTF-8')
+incidents_data.to_csv('incidents_data.csv', encoding='UTF-8')
 
 #test=pd.read_csv('incidents_data.csv',encoding='UTF-8')
