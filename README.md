@@ -42,18 +42,21 @@ Nous aimerions aussi si possible afficher des graphiques statistiques ou des car
 
 # Etat de réalisation du projet:
 Récupération des données pertinentes achevée
-Création du répertoire de projet avec Django (construction et migration des classes )
+Création du répertoire de projet avec Django
+Remplissage de la base de données effectué
 
 # Description des fichiers du dépôt:
+
 	script_get_data.py : fichier python permettant de récupérer les données utiles et de les mettre sous forme de 
 dataframe pour une manipulation simplifiée.
+
 	script_cleaning_data.py : fichier python permettant de nettoyer les données récupérées (suppression ou remplissage des valeurs manquantes)
 
 # Etat de la récupération des données, du nettoyage et de leur mise en forme:
-Toutes les données récupérables (soucis matériel et de temps) récupérées, nettoyées, d'autres mises en forme potentielles à prévoir (reliées les données provenant de différents sites entre elles)
+Toutes les données récupérables (soucis matériel et de temps) récupérées, nettoyées
 
 # Etat de la base de données réalisée:
-Créée, tables créées, migrées, base non remplie
+Créée, tables créées, migrées, base remplie
 
 # Programmes réalisés et les fonctionnalités opérationnelles:
 	script de récupération des données
