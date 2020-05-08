@@ -1,0 +1,31 @@
+<!--Code html qui se retrouve dans nos template-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+   {% block style %}{% endblock %}  
+    
+</head>
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+          <div class="container">
+            <a class="navbar-brand mr-4" href="{% url 'application_homepage' %}">BDDR Project</a>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+              <div class="navbar-nav mr-auto">
+                <a class="nav-item nav-link" href="{% url 'application_homepage' %}">Home</a>
+                <a class="nav-item nav-link" href="{% url 'application_test' %}">Test</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+    </header>
+
+   {% block content%}{% endblock %}  
+
+</body>
+</html>
