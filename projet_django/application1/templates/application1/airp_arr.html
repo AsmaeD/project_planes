@@ -1,7 +1,7 @@
 {% extends 'application1/base.html'%}
 {% block style%}
 
-    <title>Table Airports_dep</title>
+    <title>Table Airports_arr</title>
     <style>   
         table.mon_tableau  {
             border-collapse: collapse;
@@ -20,12 +20,7 @@
 
 {% block content %}
 
-    <div class="collapse navbar-collapse" id="navbarToggle">
-    <div class="navbar-nav mr-auto">
-        <a class="nav-item nav-link" href="{% url 'application_airports_dep' %}">Aéroports de départ</a>
-    </div>
-    </div>
-    <h1>La table Airports_dep</h1>
+    <h1>La table Airports_arr</h1>
     <table class="mon_tableau">
 
         <tr>
@@ -36,7 +31,7 @@
             <td>Latitude</td>
             <td>Longitude</td>
         </tr>
-        {% for i in Aéroport_dep %}
+        {% for i in Aéroport_arr %}
         <tr>
             <td>{{ i.IACO }} </td>
             <td>{{ i.airport_name }} </td>
@@ -46,6 +41,6 @@
             <td>{{ i.lon }} </td>
         </tr>
         {% endfor %}
-        </table>
+    </table>
 
 {% endblock content %}
