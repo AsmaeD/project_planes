@@ -1,0 +1,32 @@
+#!/usr/bin/env python3
+
+#importation des exceptions django, des packages python et des classes de l'application
+
+from django.core.exceptions import ObjectDoesNotExist
+from application1.models import Airports_arr
+import pandas as pd
+
+#Création du dataframe
+
+airports = pd.read_csv("/users/mmath/renaudin/projet_bddr/airports_data.csv", encoding='UTF-8')
+
+#Remplissage de la table "Airports_arr"
+
+(n,m)=airports.shape
+
+for i in range(n) :
+    
+    code = airports['ICAO'][i]
+    name = airports['Name'][i]
+    ville = airports['City'][i]
+    pays = airports['Country'][i]
+    Latitude = airports['Lat'][i]
+    Longitude = airports['Lon'][i]
+    
+    try :
+        
+        airport = Airports_arr.objects.get(IACO=code)
+        
+    except ObjectDoesNotExist as err :
+            airport = Airports_arr(IACO=code,airport_name=name,city=ville,country=pays,lat=Latitude,lon=Longitude)
+            airport.save()
