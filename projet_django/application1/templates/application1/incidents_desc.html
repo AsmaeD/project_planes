@@ -1,0 +1,44 @@
+{% extends 'application1/base.html'%}
+{% block style%}
+
+    <title>Table Incidents description</title>
+    <style>   
+        table.mon_tableau  {
+            border-collapse: collapse;
+        }
+        table.mon_tableau td {
+        border: 1px solid #5555;
+        padding: 0.3em;
+        font-family: "Sans-serif";
+        font-size: 12px;
+        }
+        table.mon_tableau tr:nth-child(even)  {background: #EEE}
+        table.mon_tableau tr:nth-child(odd) {background: #FFF}
+    </style>
+
+{% endblock style %}
+
+{% block content %}
+
+    <h1>La table Incidents_description</h1>
+    <table class="mon_tableau">
+
+        <tr>
+            <td>id_incident_description</td>
+            <td>id_incident</td>
+            <td>Type d'accident</td>
+            <td>Décès</td>
+            <td>Compagnie</td>
+        </tr>
+        {% for i in Incidents_desc %}
+        <tr>
+            <td>{{ i.id }} </td>
+            <td>{{ i.id_incidents }} </td>
+            <td>{{ i.inc_type }} </td>
+            <td>{{ i.fatalities }} </td>
+            <td>{{ i.airline }} </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}
