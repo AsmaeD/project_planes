@@ -1,0 +1,25 @@
+{% extends 'application1/base.html'%}
+{% block style %}
+
+    <title>Page des données</title>
+
+{% endblock style %}
+
+{% block content %}
+
+    <div class="sidenav">
+        <a href="{% url 'application_airports_dep' %}">Aéroports de départ</a>
+        <a href="{% url 'application_airports_arr' %}">Aéroports d'arrivée</a>
+        <a href="{% url 'application_incidents' %}">Incidents</a>
+        <a href="{% url 'application_incidents_desc' %}">Incidents description</a>
+    </div>
+
+    <div class="content">
+        <h2>Les données</h2>
+        <p>Infos sur la construction de la base de données</p>
+    </div>
+    
+
+{% endblock content %}
+ 
+<!-- Peut-être mettre un main pour la description du sidebar, mais attention au css ensuite, que ce soit toujours lisible-->
