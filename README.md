@@ -42,9 +42,9 @@ Nous aimerions aussi si possible afficher des graphiques statistiques ou des car
 
 # Etat de réalisation du projet:
 
-Récupération des données pertinentes achevée
-Création du répertoire de projet avec Django
-Remplissage de la base de données effectué
+Récupération des données pertinentes achevée,
+Création du répertoire de projet avec Django,
+Remplissage de la base de données effectué,
 Application web réalisée
 
 # Description des fichiers du dépôt:
