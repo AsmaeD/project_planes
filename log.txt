@@ -12,3 +12,5 @@ Migration des classes faite et appliquée. Début de rédaction du script de rem
 06/05/2020 : (Phi) écriture du script de remplissage de la base. Pas encore testé car toutes les données ne sont pas encore nettoyées
 
 07/05/2020 : (Phi) nettoyage des données fini, modification du script de remplissage, remplissage de la base effectué et réussi.
+
+08/05/2020-23/05/2020 : (Phi) réalisation de l'application web
