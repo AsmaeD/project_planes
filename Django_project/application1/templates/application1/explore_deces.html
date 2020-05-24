@@ -1,0 +1,65 @@
+{% extends 'application1/base_explore.html'%}
+{% block style_explore %}
+
+    <title>Explore Décès</title>
+    
+{% endblock style_explore %}
+
+{% block content_explore %} 
+
+    <h2>Différentes informations sur les décès</h2>
+
+    <div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h2>Nombre de décès par année</h2>
+        <table class="mon_tableau">
+
+            <tr>
+                <td>Année</td>
+                <td>Nombre de décès</td>
+            </tr>
+            {% for i in nb_death_y %}
+            <tr>
+                <td>{{ i.date }} </td>
+                <td>{{ i.fat }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+    </div>
+    <div class="column" style="background-color:#bbb;">
+        <h2>Pays dans lesquels il y a eu le plus de décès</h2>
+        <table class="mon_tableau">
+
+            <tr>
+                <td>Pays</td>
+                <td>Nombre de décès</td>
+            </tr>
+            {% for i in coun_m_d %}
+            <tr>
+                <td>{{ i.incident_country }} </td>
+                <td>{{ i.sum_death }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="column" style="background-color:#ccc;">
+        <h2>Compagnies ayant connues le plus de décès</h2>
+        <table class="mon_tableau">
+
+            <tr>
+                <td>Compagnie</td>
+                <td>Nombre de décès</td>
+            </tr>
+            {% for i in comp_m_d %}
+            <tr>
+                <td>{{ i.airline }} </td>
+                <td>{{ i.sum_death }} </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    </div>
+    
+
+{% endblock content_explore %}

@@ -1,0 +1,53 @@
+{% extends 'application1/base_data.html'%}
+
+{% block style %}
+
+    <title>Page des données</title>
+
+{% endblock style %}
+
+{% block content_data %}
+
+    <h2>Les données</h2>
+    <p>Notre base de données se compose de 4 tables.</p>
+    <p>
+        Deux tables rassemblent des informations sur les différents aéroports dans le monde
+        et deux autres rassemblent différentes informations sur les accidents aériens qui
+        ont eu lieu de 1919 à nos jours.
+    </p>
+    <p>Nous vous invitons à naviguer à travers ces tables pour visualiser les données.</p>
+
+    <div class="row">
+    <div class="column" style="background-color:#aaa;">
+        <h2>Informations sur les tables (1)</h2>
+        <p>Les tables Airports_dep et Airports_arr sont construites de la même manière: </p>
+        <p>ICAO : code caractérisant un unique aéroport dans le monde (clé primaire) </p>
+        <p>Name_airport : Nom officiel de l'aéroport </p>
+        <p>City : Ville dans laquelle se situe le dit aéroport </p>
+        <p>Country : Pays dans lequel se situe l'aéroport </p>
+        <p>Latitude et Longitude : les coordonnées géographiques de l'aéroport </p>
+    </div>
+
+    <div class="column" style="background-color:#bbb;">
+        <h2>Informations sur les tables (2)</h2>
+        <p>La table Incidents est construite de la manière suivante: </p>
+        <p>id_incident : clé primaire caractérisant un unique accident </p>
+        <p>Date : Année de survenue de l'accident </p>
+        <p>Location : Lieu aproximatif de la survenue de l'accident </p>
+        <p>Pays : Pays dans lequel est survenu l'accident </p>
+        <p>Modèle d'avion : modèle d'avion impliqué dans l'accident </p>
+        <p>Aéroport de départ et Aéroport d'arrivée : clés étrangères se référençant aux tables Airports_dep et Airports_arr </p>
+    </div>
+
+    <div class="column" style="background-color:#ccc;">
+        <h2>Informations sur les tables (3)</h2>
+        <p>La table Incidents_description est construite de la manière suivante: </p>
+        <p>id_incident_desciption : clé primaire caractérisant une unique description d'accident </p>
+        <p>id_incident : clé étrangère référençant l'accident de la description </p>
+        <p>Type d'accident : code représentant la catégorie de l'accident </p>
+        <p>Décès : Nombre de personnes décédées lors de l'accident (un nombre inférieur à 0 signifie une absence d'information) </p>
+        <p>Compagnie : Compagnie effectuant le vol </p>
+    </div>
+    </div>
+
+{% endblock content_data %}

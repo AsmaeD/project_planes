@@ -1,0 +1,56 @@
+{% extends 'application1/base_pays.html'%}
+{% block style_explore %}
+
+    <title>Explore Mexique</title>
+    
+{% endblock style_explore %}
+
+{% block content_pays %} 
+
+    <h2>Différentes informations sur les accidents survenus au Mexique</h2>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Nombre d'accidents par année</h2>
+            <table class="mon_tableau">
+
+                <tr>
+                    <td>Année</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in nb_inc_y %}
+                <tr>
+                    <td>{{ i.date }} </td>
+                    <td>{{ i.date__count }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Informations supplémentaires</h2>
+            <p>
+                Le Mexique compte {{nb_airp}} aéroports sur son territoire d'après notre jeu de données.
+                Il est survenu, de 1919 à nos jours, {{nb_inc}} accidents aériens sur le territoire Mexicain,
+                dont {{nb_inc_mortel}} ont été mortels pour un total de {{nb_death.nb}} personnes décédées.
+            </p>
+        </div>
+        <div class="column" style="background-color:#ccc;">
+            <h2>Nombre d'accidents par aéroport de départ</h2>
+            <table class="mon_tableau">
+
+                <tr>
+                    <td>Aéroport</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in nb_inc_airp %}
+                <tr>
+                    <td>{{ i.airport_name }} </td>
+                    <td>{{ i.nb_inc }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>   
+
+{% endblock content_pays %}

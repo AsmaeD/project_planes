@@ -1,0 +1,69 @@
+{% extends 'application1/base_explore.html'%}
+{% block style_explore%}
+
+    <title>Explore Incidents</title>
+    
+{% endblock style_explore %}
+
+{% block content_explore %}
+
+    <h2>Différentes informations sur les accidents</h2>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Nombre d'accidents par année</h2>
+            <table class="mon_tableau">
+
+                <tr>
+                    <td>Année</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in nb_in_ann %}
+                <tr>
+                    <td>{{ i.date }} </td>
+                    <td>{{ i.date__count }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+
+        </div> 
+        <div class="column" style="background-color:#bbb;">
+            <h2>Nombre d'accidents par type</h2>
+
+            <h3>Signification des types d'accidents</h3>
+
+            <p> A = Accident </p>
+            <p> I = Incident </p>
+            <p> H = Hijacking </p>
+            <p> C = Criminal occurrence (sabotage, shoot down) </p>
+            <p> O = Other occurrence (ground fire, sabotage) </p>
+            <p> U = Insufficient information is available to determine the exact type of occurrence </p>
+                
+            <p> 1 = hull-loss </p>
+            <p> 2 = repairable damage </p>
+
+            <table class="mon_tableau">
+
+                <tr>
+                    <td>Type d'accident</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in nb_in_type %}
+                <tr>
+                    <td>{{ i.inc_type }} </td>
+                    <td>{{ i.inc_type__count }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>    
+
+        <div class="column" style="background-color:#ccc;">
+            <h2>Nombre d'incidents mortels</h2>
+            <p>
+                Parmis les {{nb_in_tot}} incidents répertoriés dans notre base de données,{{nb_in_lethal}} ont été mortels.
+                Vous retrouverez plus d'informations sur le nombre de décès dans la section Décès.
+            </p>
+        </div>
+    </div>
+
+{% endblock content_explore %}

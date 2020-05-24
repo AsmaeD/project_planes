@@ -1,0 +1,34 @@
+{% extends 'application1/base.html'%}
+{% block style %}
+
+    <style>   
+        table.mon_tableau  {
+            border-collapse: collapse;
+        }
+        table.mon_tableau td {
+        border: 1px solid #111;
+        padding: 0.3em;
+        font-family: "Sans-serif";
+        font-size: 12px;
+        }
+    </style>
+
+   {% block style_explore %}{% endblock style_explore %}  
+{% endblock style %}
+
+
+
+
+{% block content %}
+
+    <div class="navbar">
+        <a href="{% url 'application_explore_incidents' %}">Incidents</a>
+        <a href="{% url 'application_explore_deces' %} ">Décès</a>
+        <a href="{% url 'application_explore_pays' %}">Pays</a>
+        <a href="{% url 'application_explore_compagnies' %}">Compagnie</a>
+    </div> 
+
+   {% block content_explore%}{% endblock content_explore%} 
+     
+
+{% endblock content %}
