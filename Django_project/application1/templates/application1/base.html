@@ -11,22 +11,21 @@
 
     <link rel="stylesheet" type="text/css" href="{% static 'application1/main.css' %}">
 
-
    {% block style %}{% endblock %}  
     
 </head>
 <body>
 
   <div class="header">
-    <h1>Titre du header</h1>
-    <p>Essai header</p>
+    <h1>Aviation incidents information website</h1>
+    <p>Visualize and learn about plane incidents throughout the years</p>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarToggle">
       <div class="navbar-nav mr-auto">
           <a class="nav-item nav-link" href="{% url 'application_homepage' %}">Home</a>
           <a class="nav-item nav-link" href="{% url 'application_Data' %}">Data</a>
-          <a class="nav-item nav-link" href="#Explore">Explore</a>
+          <a class="nav-item nav-link" href="{% url 'application_explore' %}">Explore</a>
       </div>
   </div>
 
@@ -34,7 +33,7 @@
     {% block content%}{% endblock %}  
 
   <div class="footer">
-    <h2>Footer</h2>
+    <h5>School project realized in 2020 by RENAUDIN Philippine, DADI Asmae and BENNETEAU Pierre</h5>
   </div>
 
 </body>

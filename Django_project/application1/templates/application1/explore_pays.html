@@ -1,0 +1,65 @@
+{% extends 'application1/base_pays.html'%}
+{% block style_explore %}
+
+    <title>Explore Pays</title>
+    
+{% endblock style_explore %}
+
+{% block content_pays %}  
+    <h1>Informations globales</h1>
+
+    <p>
+        Nous avons choisi de ne considérer que 5 pays sur les {{nb_pays}} pour ne pas alourdir l'application.
+        Nous avons donc choisi un pays par continent pour balayer l'ensemble du globe.
+    </p>
+    <p>Vous pouvez visualiser cela grâce à la barre de navigation ci-dessus. Nous avons également affiché le nombre d'aéroport par pays ci-dessous</p>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h3>Nombre d'aéroports par pays</h3>
+            <table class="mon_tableau">
+                <tr>
+                    <td>Pays</td>
+                    <td>Nombre d'aéroports</td>
+                </tr>
+                {% for i in nb_airp_pays_1 %}
+                <tr>
+                    <td>{{ i.country }} </td>
+                    <td>{{ i.nb_airp }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h3>Nombre d'aéroports par pays</h3>
+            <table class="mon_tableau">
+                <tr>
+                    <td>Pays</td>
+                    <td>Nombre d'aéroports</td>
+                </tr>
+                {% for i in nb_airp_pays_2 %}
+                <tr>
+                    <td>{{ i.country }} </td>
+                    <td>{{ i.nb_airp }} </td>
+                </tr>
+                {% endfor %}
+            </table>            
+        </div>
+        <div class="column" style="background-color:#ccc;">
+            <h3>Nombre d'aéroports par pays</h3>
+            <table class="mon_tableau">
+                <tr>
+                    <td>Pays</td>
+                    <td>Nombre d'aéroports</td>
+                </tr>
+                {% for i in nb_airp_pays_3 %}
+                <tr>
+                    <td>{{ i.country }} </td>
+                    <td>{{ i.nb_airp }} </td>
+                </tr>
+                {% endfor %}
+            </table>             
+        </div>
+    </div>    
+
+{% endblock content_pays %}

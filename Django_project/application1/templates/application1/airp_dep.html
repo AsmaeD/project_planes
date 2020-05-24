@@ -1,24 +1,11 @@
-{% extends 'application1/base.html'%}
-{% block style%}
+{% extends 'application1/base_data.html'%}
+{% block style_data%}
 
     <title>Table Airports_dep</title>
-    <style>   
-        table.mon_tableau  {
-            border-collapse: collapse;
-        }
-        table.mon_tableau td {
-        border: 1px solid #5555;
-        padding: 0.3em;
-        font-family: "Sans-serif";
-        font-size: 12px;
-        }
-        table.mon_tableau tr:nth-child(even)  {background: #EEE}
-        table.mon_tableau tr:nth-child(odd) {background: #FFF}
-    </style>
 
-{% endblock style %}
+{% endblock style_data %}
 
-{% block content %}
+{% block content_data %}
 
     <h1>La table Airports_dep</h1>
     <table class="mon_tableau">
@@ -43,4 +30,4 @@
         {% endfor %}
     </table>
 
-{% endblock content %}
+{% endblock content_data %}

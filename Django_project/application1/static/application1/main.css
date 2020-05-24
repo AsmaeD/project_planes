@@ -1,0 +1,72 @@
+.header {
+    padding: 80px; /* some padding */
+    text-align: center; /* center the text */
+    background: #6d0696; /* purple background */
+    color: white; /* white text color */
+    position: static;
+  }
+  
+/* Increase the font size of the <h1> element */
+.header h1 {
+  font-size: 40px;
+}
+
+/* Style the top navigation bar */
+.navbar-nav {
+    overflow: hidden; /* Hide overflow */
+    background-color: #111; /* Dark background color */
+    position: sticky;
+    position: -webkit- sticky;
+    top:0;
+  }
+  
+/* Style the navigation bar links */
+.navbar-nav a {
+  float: left; /* Make sure that the links stay side-by-side */
+  display: block; 
+  color: white; /* White text color */
+  text-align: center; /* Center the text */
+  padding: 14px 20px; /* Add some padding */
+  text-decoration: none; /* Remove underline */
+  }
+
+/* Style the top navigation bar */
+.navbar {
+  overflow: hidden; /* Hide overflow */
+  background-color: #111; /* Dark background color */
+  position: sticky;
+  position: -webkit- sticky;
+  top:0;
+}
+
+/* Style the navigation bar links */
+.navbar a {
+float: left; /* Make sure that the links stay side-by-side */
+display: block; 
+color: white; /* White text color */
+text-align: center; /* Center the text */
+padding: 14px 20px; /* Add some padding */
+text-decoration: none; /* Remove underline */
+}
+
+
+.footer {
+    padding: 20px; /* Some padding */
+    text-align: center; /* Center text*/
+    background: #6d0696; /* purple background */
+    color: white;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 30%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+} 

@@ -1,0 +1,34 @@
+{% extends 'application1/base.html'%}
+{% block style%}
+
+    <style>   
+        table.mon_tableau  {
+            border-collapse: collapse;
+        }
+        table.mon_tableau td {
+        border: 1px solid #5555;
+        padding: 0.3em;
+        font-family: "Sans-serif";
+        font-size: 12px;
+        }
+        table.mon_tableau tr:nth-child(even)  {background: #EEE}
+        table.mon_tableau tr:nth-child(odd) {background: #FFF}
+    </style>
+
+   {% block style_data%}{% endblock style_data%}  
+{% endblock style%}
+
+
+
+{% block content %}
+
+    <div class="navbar">
+        <a href="{% url 'application_airports_dep' %}">Aéroports de départ</a>
+        <a href="{% url 'application_airports_arr' %}">Aéroports d'arrivée</a>
+        <a href="{% url 'application_incidents' %}">Incidents</a>
+        <a href="{% url 'application_incidents_desc' %}">Incidents description</a>
+    </div>    
+
+   {% block content_data%}{% endblock content_data%} 
+
+{% endblock content %}

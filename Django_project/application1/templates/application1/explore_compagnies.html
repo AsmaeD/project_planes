@@ -1,0 +1,46 @@
+{% extends 'application1/base_explore.html'%}
+{% block style_explore %}
+
+    <title>Explore Compagnie</title>
+    
+{% endblock style_explore %}
+
+{% block content_explore %}  
+
+    <h1>Informations globales</h1>
+    <p>Notre base de données comporte {{nb_comp}} compagnies aériennes. </p>
+
+    <div class="row">
+        <div class="column" style="background-color:#aaa;">
+            <h2>Compagnies les plus accidentées</h2>
+            <table class="mon_tableau">
+                <tr>
+                    <td>Compagnie</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in comp_most_inc %}
+                <tr>
+                    <td>{{ i.airline }} </td>
+                    <td>{{ i.nb_inc }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="column" style="background-color:#bbb;">
+            <h2>Compagnies les moins accidentées</h2>
+            <table class="mon_tableau">
+                <tr>
+                    <td>Compagnie</td>
+                    <td>Nombre d'accidents</td>
+                </tr>
+                {% for i in comp_least_inc %}
+                <tr>
+                    <td>{{ i.airline }} </td>
+                    <td>{{ i.nb_inc }} </td>
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+    
+{% endblock content_explore %}

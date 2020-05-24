@@ -1,0 +1,15 @@
+{% extends 'application1/base_explore.html'%}
+
+{% block content_explore %} 
+
+    <div class="navbar">
+        <a href="{% url 'application_france' %}">France</a>
+        <a href="{% url 'application_chine' %}">Chine</a>
+        <a href="{% url 'application_mexique' %}">Mexique</a>
+        <a href="{% url 'application_egypte' %}">Egypte</a>
+        <a href="{% url 'application_philippines' %}">Philippines</a>
+    </div> 
+
+   {% block content_pays%}{% endblock %}     
+
+{% endblock content_explore %}
