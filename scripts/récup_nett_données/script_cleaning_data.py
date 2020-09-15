@@ -7,7 +7,6 @@ Created on Sat Apr  4 09:27:12 2020
 
 import script_get_data as data
 import pandas as pd
-import numpy as np
 
 #Nettoyage aéroport
 
@@ -65,6 +64,9 @@ incidents_data['airp_arr_ICAO'].fillna("0000", inplace=True)
 #                 62634,62963,52605,52613,52380,9852,10204,51811,4556,4633,47391,30086]
 #
 #routes=data.routes_data.iloc[:,[1,3,5,7]].drop(liste_ligne_supp,0)
+
+
+#suppression des codes ICAO non présent dans le jeu de données 'incidents'
 
 liste_ind_dep=[]
 (n,m)=incidents_data.shape
